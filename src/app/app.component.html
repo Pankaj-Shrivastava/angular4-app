@@ -1,18 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    <span appChangeText>Welcome to {{ title | uppercase }}!</span>
   </h1>
+  <b>{{title | lowercase}}</b>
 </div>
 
 <app-new-cmp></app-new-cmp>
-
+<div>
+<h1>Slice Pipe</h1>
+<b>{{months | slice:2:6}}</b>
+</div>
+<br />
 <div> Months:
-  <select (change) = "changeMonths($event)">
+  <select (change) = "changeMonths($event)" name="month">
     <option *ngFor="let i of months">{{i}}</option>
   </select>
 </div>
-<br/>
+<br />
 <div>
   <span *ngIf="isavailable; then condition1 else condition2">Condition printed here.</span>
   <ng-template #condition1>Condition is valid</ng-template>
@@ -21,3 +26,9 @@
 <button (click)="myClickFunction($event)">
   Click Me
 </button>
+<div>
+  <h1>Custom Pipe</h1>
+  <b>Square root of 25 is: {{25 | sqrt}}</b>
+  <br />
+  <b>Square root of 729 is: {{729 | sqrt}}</b>
+</div>

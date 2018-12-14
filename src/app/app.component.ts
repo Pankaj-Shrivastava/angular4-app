@@ -13,7 +13,7 @@ export class AppComponent {
 	   "October","November","December"];
   isavailable = true;
   myClickFunction(event) {
-    alert("Button is Clicked");
+    this.isavailable = !this.isavailable;
     console.log(event);
   } 
   changeMonths(event) {
