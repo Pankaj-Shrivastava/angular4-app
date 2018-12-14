@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular4-app';
+  title = 'Angular 4 App!';
+  // declared array of months
+  months = ["January","February","March","April","May",
+  	   "June","July","August","September",
+	   "October","November","December"];
+  isavailable = true;
+  myClickFunction(event) {
+    alert("Button is Clicked");
+    console.log(event);
+  } 
+  changeMonths(event) {
+    console.log("Changed month from the Dropdown");
+    console.log(event.target.value);
+  }
 }
+
